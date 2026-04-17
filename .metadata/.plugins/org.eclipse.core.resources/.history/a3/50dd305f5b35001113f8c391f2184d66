@@ -1,0 +1,31 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MathController {
+
+    /**
+     * Adds two integers passed as query parameters: val1 and val2
+     * Example: GET /math/add?val1=3&val2=4
+     */
+    @GetMapping("/math/add")
+    public int add(@RequestParam(name = "value1") int val1,
+                   @RequestParam(name = "value2") int val2) {
+        // Logic implemented in controller as requested
+        return val1 + val2;
+    }
+
+    /**
+     * Subtracts b from a passed as query parameters: a and b
+     * Example: GET /math/sub?a=10&b=6
+     */
+    @GetMapping("/math/sub")
+    public int sub(@RequestParam(name = "a") int a,
+                   @RequestParam(name = "b") int b) {
+        // Logic implemented in controller as requested
+        return a - b;
+    }
+}

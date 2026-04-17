@@ -14,7 +14,7 @@ public class AppConfig {
 	@Bean
 	Random getRandom()
 	{
-		log.info("****Creating a new Random bean");
+		log.info("****Creating a new Random bean {}",this);
 		return new Random();
 	}
 
