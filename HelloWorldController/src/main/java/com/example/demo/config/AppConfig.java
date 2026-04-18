@@ -17,5 +17,7 @@ public class AppConfig {
 		log.info("****Creating a new Random bean {}",this);
 		return new Random();
 	}
+	
+	
 
 }

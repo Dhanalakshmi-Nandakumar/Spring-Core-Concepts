@@ -22,16 +22,17 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class MathController {
 	
-	//creating no args constructor
-	
+	//creating no args constructor	
 	@Autowired
 	private Random random;
 	
+	//cyclic dependency example
+	//private final MathController mathController;
+	
 
     private final MathService mathService;
-        
+         
     private final ApplicationContext context;
-    
     //read value from application.properties
     
    @Value("${server.port}")
@@ -71,6 +72,8 @@ public class MathController {
     
     @PostConstruct
     public void init() {
+    	
+    	
     	
     	//Dependency lookup
     	MathService mathServiceFromContext = context.getBean(MathService.class);
